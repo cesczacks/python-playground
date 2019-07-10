@@ -1,9 +1,10 @@
 import pandas as pd
 
-filePath = r'\\SAJPFAP01001\HPCShare\FDM\FDM SIT\RAFM1\COLI\2018\FC\1118_FC\COLI_FC(11-2018).csv'
+csvDir = r"C:\Users\KJ69BG\Documents\FERM Evidence\(After) if201811FC_lapse_new_group_modNCD.csv"
+selectFields = ['chdrnum', 'group', 'lcv_term', 'bcestrm']
+policyNumber = '111'
 
-reader = pd.read_csv(filePath, usecols=["CRTABLE", "ZRLCRTBL"], iterator=True, chunksize=1000)
+df = pd.read_csv(csvDir, usecols=selectFields)
+result = df.query("chdrnum==%s" %(policyNumber))
 
-df = pd.concat(reader, ignore_index=True)
-print(df)
-
+print(result)
