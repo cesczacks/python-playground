@@ -1,5 +1,6 @@
 # slice
 L = ['Michael', 'Sarah', 'Tracy', 'Bob', 'Jack']
+print('Michael' in L)
 
 # Get first three
 print(L[0:3])
